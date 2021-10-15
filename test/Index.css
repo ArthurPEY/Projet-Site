@@ -1,0 +1,306 @@
+html
+{
+    scroll-behavior: smooth;
+    background-color: #1b1b20;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+
+#nom_marque{
+  font-size: 60px;
+  font-family:"Stick No Bills";
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 20px #5c9ff8, 0 0 30px #5c9ff8, 0 0 40px #5c9ff8, 0 0 55px #5c9ff8, 0 0 75px #5c9ff8;
+  text-align: center;
+}
+
+
+header{
+  display: block;
+  background-color: #1b1b20;
+}
+
+
+.main{
+  background-color:#1b1b20;
+  box-shadow: 5px 10px 10px #ffffff;
+  border : solid;
+  border-color: #1b1b20;
+  border-width: 10px;
+  display: flex;
+  align-items: flex-start;
+  background-color:;
+  margin-bottom: 2vh;
+  height: 6vh;
+  justify-content: space-between;
+}
+
+
+
+.logo
+{   
+    display: flex;
+    height:100%;
+    background-color: #1b1b20;
+    
+
+}
+
+.click
+{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    justify-content: space-around;
+    width: 30%;
+    padding: 10px;
+
+  }
+
+  .perso{
+    display: flex;
+    padding: 10px;
+    width: 25%;
+    justify-content: space-around;
+    background-color: #1b1b20;
+  }
+
+#ps5btn, #xboxbtn,#switchbtn {
+  color: rgb(255, 255, 255);
+  display: flex;
+  text-shadow: 0px 0px 10px #ffffff;
+}
+
+
+
+#ps5btn:hover , #xboxbtn:hover , #switchbtn:hover{
+  background-color: rgb(250, 59, 59);
+  transition: 0.5s;
+  font-size: 120%;
+  border: #660d0d;
+  border-radius: 5px;
+  border-width: 100px;
+}
+
+#acc , #pay{
+  text-shadow: 0px 0px 10px #ffffff;
+  color: rgb(255, 255, 255);
+}
+
+#acc:hover , #pay:hover{
+  font-size: 120%;
+  transition: 0.5s;
+  position:static;
+  height: 5vh;
+  
+}
+
+
+.mid{ 
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border-color: green;
+  border-bottom:green
+}
+
+
+.foot
+{
+    flex-direction: row;
+    display: flex;
+    border:50px;
+    border-color: #0a0101;
+    background-color: #8c23b68e;
+ 
+
+}
+
+.left{
+  flex-grow: 3;
+  justify-content: flex-start;
+  display: flex;
+  background-color: rgb(138, 21, 21);
+  flex-direction: column;
+}
+
+.about{
+  background-color: #a7a7a7;
+  display: inline;
+}
+
+.adress{
+  display: inline;
+  justify-content: flex-end;
+  margin-top: auto;
+  background-color: #a7a7a7;
+}
+
+.midbot{
+  flex-grow: 2;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  background-color: #a7a7a7;
+}
+
+
+#reseau{
+  margin-top: auto;
+  display: flex;
+  margin-left: auto;
+}
+
+#fb , #tw , #insta {
+  background-color: royalblue;
+  width: 5vh;
+  height: 5vh;
+}
+
+.right
+{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #a7a7a7;
+    align-items: flex-end;
+}
+
+
+<style>
+* {box-sizing: border-box}
+body {
+  font-family: Verdana, sans-serif;
+  margin:0}
+.mySlides {display: none}
+  img {vertical-align: middle;}
+.slideshow-container {
+  width: 60%;
+  position: relative;
+  margin: auto;
+}
+  /* Boutons next & previous */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+  /* Position de "next button" à la droite */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+ }
+  /* En survol, ajoutez la couleur noire de l'arrière-plan avec un peu see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+  /* Caption */
+.text {
+  color: #ffffff;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+  /* Number text (1/3 etc) */
+.numbertext {
+  color: #ffffff;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+  /* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #999999;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: #111111;
+}
+  /* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+  /* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prev, .next,.text {font-size: 11px}
+  }
+
+
+.zoom {
+  padding: 1px;
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  margin-right: 10px;
+  margin: 5px;
+  border-radius: 40px; 
+  background: #ced1e0;
+  background: linear-gradient(135deg, #253CCE 0%, #1C6EA4 53%, #51AEC5 100%);
+}
+
+.zoomswitch{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(42, 16, 190);
+  transition: transform .2s;
+  border-radius: 40px; 
+  background: #253CCE;
+  background: linear-gradient(135deg, #253CCE 0%, #1C6EA4 53%, #51AEC5 100%);
+}
+
+.contenedor-imagenes {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
+
+.zoomswitch:hover {
+  transform: scale(1.2);
+}
+
+.contenedor-imagenes img:first-child {
+  margin-right: 10px;
+}
