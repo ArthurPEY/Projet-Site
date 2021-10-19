@@ -43,12 +43,20 @@ function recupadress() {
                 .then(res2 => res2.json())
                 .then(data2 => {
                     dist = data2.routes[0].distance;
-                    console.log(dist);
+                    calculfdl(dist)
         });
     });
-    console.log("3")
     
-    trajet = `https://api.mapbox.com/directions/v5/mapbox/driving/4.860297%2C45.770119%3B4.8593999%2C45.7611438?alternatives=true&geometries=geojson&steps=true&access_token=pk.eyJ1IjoiYXJ0aHVwIiwiYSI6ImNrdW5zZ3JjMjBidnIyd3FybGZmeWgydm8ifQ.MEgNYhco5LuBrDYGmKn8OQ`;
-}
+};
+    
+function calculfdl(dist) {
+        fdl = 0;
+        if (dist>20000) {
+            fdl = 5 + 0.07*dist/1000
+            fdl = Math.round(fdl)
+        }
+        document.getElementById("somme_livraison").innerHTML=fdl + "€" ;
+    }
+    
 
 
