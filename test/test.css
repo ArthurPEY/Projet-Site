@@ -1,0 +1,22 @@
+canvas{
+    height: 100px;
+    width: 100px;
+}
+
+#fondps5{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+img{
+    width: auto;
+    height: auto;
+}
+
+
+#customps5{
+    width:500px;
+    height: 500px;
+    border: dashed red;
+}

@@ -23,6 +23,10 @@ header{
   background-color: #1b1b20;
 }
 
+img{
+  max-width: 100%;
+  max-height: auto;
+}
 
 .main{
   background-color:#1b1b20;
@@ -36,9 +40,7 @@ header{
   margin-bottom: 2vh;
   height: 6vh;
   justify-content: space-between;
-}
-
-
+}   
 
 .logo
 {   
@@ -116,22 +118,32 @@ header{
     display: flex;
     border:50px;
     border-color: #0a0101;
-    background-color: #8c23b68e;
+    background-color: #a7a7a7;
+    height: 30vh;
  
 
 }
 
 .left{
-  flex-grow: 3;
+  flex-grow: 2;
   justify-content: flex-start;
   display: flex;
-  background-color: rgb(138, 21, 21);
+  background-color: #a7a7a7;
   flex-direction: column;
+}
+
+.map{
+  flex-grow: 2;
+  display: flex;
+  max-height: 100%;
+  max-width: 100%;
+  background-color: #a7a7a7;
 }
 
 .about{
   background-color: #a7a7a7;
-  display: inline;
+  display: block;
+  max-height: 100%;
 }
 
 .adress{
@@ -158,8 +170,8 @@ header{
 
 #fb , #tw , #insta {
   background-color: royalblue;
-  width: 5vh;
-  height: 5vh;
+  width: 8vh;
+  height: 8vh;
 }
 
 .right
@@ -270,6 +282,7 @@ body {
   border-radius: 40px; 
   background: #ced1e0;
   background: linear-gradient(135deg, #253CCE 0%, #1C6EA4 53%, #51AEC5 100%);
+  display: block;
 }
 
 .zoomswitch{

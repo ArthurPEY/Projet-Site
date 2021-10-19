@@ -10,6 +10,7 @@
 
 <body>
     <script src="script.js"></script>
+    <header id=header></header>
     <div class="conteiner-ps5">
         <div class="nomborder">
             <div id="nom-manette" >PS5 Personnalisée</div>
@@ -17,10 +18,11 @@
         <div class="conteiner-ps5perso">
             <div class="img-ps5perso">
                 <img id="imggauche" src="ps5.png">
-                <img id="ps5f" src="images/ps5/ps5fond.png">
-                <img id="joyd" src="images/ps5/joyd.png">
-                <img id="joyg" src="images/ps5/joyg.png">
-                <img id="btn" src="images/ps5/btnps5.png">
+                <img id="idps5f" src="images/ps5/ps5fond.png">
+                <img id="idjoyd" src="images/ps5/joyd.png">
+                <img id="idjoyg" src="images/ps5/joyg.png">
+                <img id="idbtn" src="images/ps5/btnps5.png">
+                <img id="idcroix" src="images/ps5/croix.png">
             </div>
             <div class="selector">
                 <h1>Couleur de la manette:</h1>
@@ -41,12 +43,12 @@
                     <button class="dotgreen" id="joygred" type="button" onclick="joystickg(2)"> </button>
                     <button class="dotblue" id="joygred" type="button" onclick="joystickg(3)"> </button>
                 </div>
-                <h1>Couleur des touches directionnelles:</h1>
+                <h1>Couleur des croix directionnelles:</h1>
                 <div class="colorselector">
-                    <span class="dotred"></span>
-                    <span class="dotgreen"></span>
-                    <span class="dotblue"></span>
-                    </div>
+                    <button class="dotred" id="croixred" type="button" onclick="croix('rouge')"> </button>
+                    <button class="dotgreen" id="croixgree d" type="button" onclick="croix('vert')"> </button>
+                    <button class="dotblue" id="croixblue" type="button" onclick="croix('bleu')"> </button>
+                </div>
                 <h1>Couleur des boutons:</h1>
                 <div class="colorselector">
                     <button class="dotred" id="btnred" type="button" onclick="btn(1)"> </button>
@@ -65,5 +67,6 @@
 
             </div>
         </div>
+    <footer id="footer"></footer>
     </div>
 </body>   

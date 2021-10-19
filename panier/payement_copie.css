@@ -1,0 +1,114 @@
+.form1{
+    order:0
+}
+
+.form2{
+    justify-self: center;
+    order:1
+}
+body{
+    background-color: #1b1b20;
+    color: rgb(255, 255, 255);
+}
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    font-family: "Nunito", serif;
+}
+.commentaire {
+    font-family: "Nunito", serif;
+}
+div {
+    margin-bottom: 10px;
+}
+.boite_recap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: "Nunito", serif;
+}
+h1{
+    text-decoration: underline overline #ffffff;
+    color: darkcyan;
+    font-family: "Lobster", serif;
+}
+.button{
+    background-color: #00aeff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: "Lobster", serif;
+}
+.bloc_payement{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+.bloc_fils_panier{
+    background-color: darkmagenta;
+    display: flex;
+    flex-direction: column;
+    font-family: "Nunito", serif;
+}
+.conteneur_achats{
+    background-color: darkorange;
+    display: flex;
+    flex-direction: row;
+}
+.nom_achat, .image_achat{
+    flex-grow: 1;
+}
+
+
+
+element.style {
+}
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+    margin: 10px 10px 0 0;
+    float: right;
+}
+.mapboxgl-ctrl-geocoder, .mapboxgl-ctrl-geocoder .suggestions {
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 10%);
+}
+.mapboxgl-ctrl-geocoder {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    min-width: 240px;
+    z-index: 1;
+    border-radius: 4px;
+    transition: width .25s, min-width .25s;
+}
+.mapboxgl-ctrl-geocoder, .mapboxgl-ctrl-geocoder *, .mapboxgl-ctrl-geocoder *:after, .mapboxgl-ctrl-geocoder *:before {
+    box-sizing: border-box;
+}
+.mapboxgl-ctrl {
+    clear: both;
+    pointer-events: auto;
+    transform: translate(0);
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-top-left, .mapboxgl-ctrl-top-right {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+}
+.mapboxgl-map {
+    font: 12px/20px Helvetica Neue,Arial,Helvetica,sans-serif;
+    overflow: hidden;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
