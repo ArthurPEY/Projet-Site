@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="payement_copie.css">
+    <link rel="stylesheet" type="text/css" href="/Site/CSS/paiement.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <title>Payement</title>
 </head>
 <body>
-  <script src="panier.js"></script>
+  <script src="/Site/JS/panier.js"></script>
+  <header id=header></header>
   <div class="bloc_payement">
     <div class="bloc_fils_panier">
       <h1>Contenu du panier:</h1>
@@ -40,32 +41,20 @@
             <input type="text" name="surname" id="surname" required>
           </div>
         <div class="form">
-            <label for="name">Rue: </label>
-            <input type="text" name="street" id="street" required>
-          </div>
-          <div class="form">
-            <label for="name">Ville: </label>
-            <input type="text" name="city" id="city" required>
-          </div>
-          <div class="form">
-            <label for="name">Code Postal:</label>
-            <input type="text" name="postal code" id="postal_code" required maxlength="5">
-          </div>
-        <div class="form">
             <label for="name">Numéro de téléphone:</label>
             <input type="text" name="phone" id="phone" required maxlength="10">
         </div>
         <div class="form">
+          <label for="adresse"> Adresse </label>
+          <input id="adresse" onkeyup="recupadress()">
+        </div>
+        <div class="form">
           <label for="name">Date de livraison souhaitée:</label>
-          <input type="date" id="start" name="trip-start" value="2021-09-11" min="2021-09-11" max="2022-12-01">
+          <input type="date" id="start" name="trip-start" oninput="calculDateLivraison()">
         </div>
         <div class="form">
           <label for="email">Adresse mail: </label>
           <input type="email" name="email" id="email" required>
-        </div>
-        <div class="form">
-          <label for="adresse"> Adresse </label>
-          <input id="adresse" onkeyup="recupadress()"></input>
         </div>
         <div class="form">
           <p class="commentaire">Commentaires ou demande de renseignements :</p>
@@ -86,10 +75,12 @@
         </div>
         <div class="boite_livraison">Livraison :<p id="somme_livraison">0</p>
         </div>
+        <div class="boite_Express">Livraison Express : <p id="optionexpress"></p>
+        </div>
         <div class="boite_total">Total : <p id="somme_totale">0</p>
         </div>
       </div>
     </div>
   </div>      
-
+  <footer id="footer"></footer>
 </body>

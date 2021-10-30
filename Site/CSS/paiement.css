@@ -49,18 +49,29 @@ h1{
 .bloc_payement{
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+
 }
 .bloc_fils_panier{
     background-color: darkmagenta;
     display: flex;
     flex-direction: column;
     font-family: "Nunito", serif;
+    flex-grow: 1;
+}
+.bloc_fils_livraison{
+    flex-grow: 1;
+    background-color: #00aeff;
 }
 .conteneur_achats{
     background-color: darkorange;
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
+}
+
+.conteneur_prix{
+    flex-grow: 1;
+
 }
 .nom_achat, .image_achat{
     flex-grow: 1;

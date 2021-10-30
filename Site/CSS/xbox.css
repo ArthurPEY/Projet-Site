@@ -30,14 +30,14 @@ html
     font-family: Georgia, 'Times New Roman', Times, serif;
     
 }
-.conteiner-ps5perso{
+.conteiner-xboxperso{
     flex-direction: row;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     
 }
-.img-ps5perso{
+.img-xboxperso{
     display: flex;
     position: relative;
     justify-content: center;
@@ -53,24 +53,18 @@ html
 .selector{
     flex-grow: 1;
     height: auto;
-    border-top: 5px solid #1C6EA4;
-    border-bottom: 5px solid #1C6EA4;
-    border-right: 5px solid #1C6EA4;
-    padding: 0px;
+    margin-left: 10px;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
+    border: 5px solid #1C6EA4;
 }
-#imggauche, #idps5f, #idjoyd, #idjoyg, #idbtn, #idcroix{
+#imggauche, #idxboxf, #idjoyd, #idjoyg, #idbtn, #idcroix{
     position:absolute;
     max-width: 70vh;
     height: auto;
 }
 
-.prix{
-    flex-direction: row;
-    display: flex;
-    justify-content: center;
-}
 .texte-prixborder{
     flex-grow: 1;
     width: 300px;
@@ -88,7 +82,7 @@ html
 .colorselector{
     display: flex;
     flex-direction: row;
-    width: 15vh;
+    width: 30vh;
     justify-content: space-between;
 }
 
@@ -116,12 +110,56 @@ html
     display: inline-block;
     transition: transform .2s;
 }
-.dotgreen:hover {
-    transform: scale(1.5);
+
+.reset{
+    height: 25px;
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform .2s;
 }
-.dotred:hover {
-    transform: scale(1.5);
+.dotgreen:hover,.dotred:hover,.dotblue:hover,.reset:hover {
+    transform: scale(1.2);
 }
-.dotblue:hover {
-    transform: scale(1.5);
+
+.resetbox{
+    display: flex;
+    justify-content: center;
+}
+
+
+#resetall{
+    margin-top: 15px;
+    height: 25px;
+    width: fit-content;
+    background-color: rgba(255, 170, 170, 0.712);
+    border-radius: 10%;
+    display: flex;
+    transition: transform .2s;
+}
+
+.prix{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+#boxprix{
+    display: flex;
+}
+
+#prixxbox{
+    color: rgb(255, 255, 255);
+    font-size:50px;
+    display: flex;
+}
+
+#boxadd{
+    display: inline;
+}
+
+#addcartbutton{
+    display: inline;
 }
