@@ -8,23 +8,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <title>Payement</title>
 </head>
-<body>
+<body onload="recupobj()">
   <script src="/Site/JS/panier.js"></script>
   <header id=header></header>
   <div class="bloc_payement">
     <div class="bloc_fils_panier">
       <h1>Contenu du panier:</h1>
       <div class="conteneur_achats">       
-        <div class="nom_achat">
-            couleur joystick droit : {{jdroit}} </br>
-            couleur joystick gauche : {{jgauche}}</br>
-            couleur joystick gauche : {{jgauche}}</br>
-            couleur boutons : {{boutons}}</br>
-            couleur croix directionelle : {{croix}}</br>
-            quantité : {{qtite}}</br>
-        </div>  
+        <p id="nom_achat">
+
+        <p>  
         <div class="image_achat">
-          <img src="ps5.png" width="150px">
+          <img src="" width="150px">
         </div>
       </div>
     </div>
@@ -63,6 +58,7 @@
         <div class="form_bouton">
           <button type="submit" value="Commander" class="button">Commander
           <button type="reset" value="Remise à zero" class="button">Remise à zéro
+          <button type="reset" value="vide panier" class="button" onclick="clearcart()">Vider le panier
         </div>
 
         
@@ -71,13 +67,13 @@
     <div class="bloc_fils_prix">
       <h1>Récapitulation de la commande :</h1>
       <div class="boite_recap">
-        <div class="boite_prix">Prix de la manette: <p id="somme_prix">0</p>
+        <div class="boite_prix"><p id=textprix>Prix de la manette:</p><p id="somme_prix">0 €</p>
         </div>
-        <div class="boite_livraison">Livraison :<p id="somme_livraison">0</p>
+        <div class="boite_livraison">Livraison :<p id="somme_livraison">0 €</p>
         </div>
         <div class="boite_Express">Livraison Express : <p id="optionexpress"></p>
         </div>
-        <div class="boite_total">Total : <p id="somme_totale">0</p>
+        <div class="boite_total">Total : <p id="somme_totale">0 €</p>
         </div>
       </div>
     </div>

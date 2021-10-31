@@ -2,7 +2,7 @@ fetch("header.html").then(contenu => contenu.text()).then(texte => {document.get
 fetch("footer.html").then(contenu => contenu.text()).then(texte => {document.getElementById("footer").innerHTML = texte;})
 
 item=[]
-id=0;
+idxbox=0;
 
 
 window.onload = function() {origin();};
@@ -53,7 +53,7 @@ function joystickd(jd) {
   if (jd=="noir") {
     imageObj.src="images/xbox/xboxjoyd.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p1=0
   }
   calculprix()
 }
@@ -109,7 +109,7 @@ function btn(bt) {
   if (bt=="blanc") {
     imageObj.src="images/xbox/xboxbtn.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p3=0
   }
   calculprix()
 }
@@ -137,7 +137,7 @@ function fond(back) {
   if (back=="blanc") {
     imageObj.src="images/xbox/xboxfond.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p4=0
   }
   calculprix()
 }
@@ -165,7 +165,7 @@ function croix(crx) {
   if (crx=="blanc") {
     imageObj.src="images/xbox/xboxcroix.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p5=0
   }
   calculprix()
 }
@@ -189,21 +189,22 @@ function resetall() {
 
 prix=60;
 function calculprix() {
-    prix=50 + p1 + p2 + p3 + p4 + p5 ;
+    prix=60 + p1 + p2 + p3 + p4 + p5 ;
     document.getElementById("prixxbox").innerHTML = "Prix : " + prix +"€"
 }
 
 function addcart (){
-    itemxbox=new manette("xbox",saveback,savejd,savejg,savebt,savecroix,id,prix);
-    item.push(JSON.stringify(itemxbox));
-    localStorage.setItem("panierxbox",item);
-    id=id+1;
+    itemxbox=new manette("XBOX",saveback,savejd,savejg,savebt,savecroix,idxbox,prix);
+    item=JSON.stringify(itemxbox);
+    localStorage.setItem("idxbox",idxbox)
+    localStorage.setItem("panierxbox"+idxbox,item);
+    idxbox=idxbox+1;
 }
 
 
 class manette{
 
-  constructor(modele,fond,joystickdroit,joystickgauche,bouton,croixdir,id,prix){
+  constructor(modele,fond,joystickdroit,joystickgauche,bouton,croixdir,idxbox,prix){
       this.modele = modele;
       this.fond = fond;
       this.joystickdroit = joystickdroit;
@@ -211,7 +212,7 @@ class manette{
       this.bouton = bouton;
       this.croixdir = croixdir;
       this.prix = prix;
-      this.id = id;
+      this.idxbox = idxbox;
   }
 }
 

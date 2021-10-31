@@ -3,7 +3,7 @@ fetch("footer.html").then(contenu => contenu.text()).then(texte => {document.get
 
 
 item=[]
-id=0;
+idps5=0;
 
 
 window.onload = function() {origin();};
@@ -54,7 +54,7 @@ function joystickd(jd) {
   if (jd=="noir") {
     imageObj.src="images/ps5/joyd.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p1=0
   }
   calculprix()
 }
@@ -110,7 +110,7 @@ function btn(bt) {
   if (bt=="blanc") {
     imageObj.src="images/ps5/btn.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p3=0
   }
   calculprix()
 }
@@ -138,7 +138,7 @@ function fond(back) {
   if (back=="blanc") {
     imageObj.src="images/ps5/fond.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p4=0
   }
   calculprix()
 }
@@ -166,7 +166,7 @@ function croix(crx) {
   if (crx=="blanc") {
     imageObj.src="images/ps5/croix.png";
     imageObj.onload = event => {draw()}
-    p2=0
+    p5=0
   }
   calculprix()
 }
@@ -195,10 +195,11 @@ function calculprix() {
 }
 
 function addcart (){
-    itemps5=new manette("PS5",saveback,savejd,savejg,savebt,savecroix,id,prix);
-    item.push(JSON.stringify(itemps5));
-    localStorage.setItem("panierps5",item);
-    id=id+1;
+    itemps5=new manette("PS5",saveback,savejd,savejg,savebt,savecroix,idps5,prix);
+    item=JSON.stringify(itemps5);
+    localStorage.setItem("idps5",idps5)
+    localStorage.setItem("panierps5"+idps5,item);
+    idps5=idps5+1;
 }
 
 
@@ -212,6 +213,6 @@ class manette{
       this.bouton = bouton;
       this.croixdir = croixdir;
       this.prix = prix;
-      this.id = id;
+      this.idps5 = idps5;
   }
 }

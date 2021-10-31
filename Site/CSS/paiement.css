@@ -52,7 +52,7 @@ h1{
 
 }
 .bloc_fils_panier{
-    background-color: darkmagenta;
+    background-color: #1b1b20;
     display: flex;
     flex-direction: column;
     font-family: "Nunito", serif;
@@ -60,10 +60,10 @@ h1{
 }
 .bloc_fils_livraison{
     flex-grow: 1;
-    background-color: #00aeff;
+    background-color: #1b1b20;
 }
 .conteneur_achats{
-    background-color: darkorange;
+    background-color: #1b1b20;
     display: flex;
     flex-direction: row;
     flex-grow: 1;

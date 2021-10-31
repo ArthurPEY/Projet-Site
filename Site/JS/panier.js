@@ -1,39 +1,10 @@
 fetch("header.html").then(contenu => contenu.text()).then(texte => {document.getElementById("header").innerHTML = texte;})
 fetch("footer.html").then(contenu => contenu.text()).then(texte => {document.getElementById("footer").innerHTML = texte;})
 
+prixtot=0;
+prixpanier=0;
+prixexpress=0;
 
-manettePS5 = [
-    {
-        jdroit : "blanc",
-        jgauche : "blanc",
-        fond : "blanc",
-        boutons:"blanc",
-        croix:"blanc",
-        qtite:"0",
-        prix:"70 "
-    }
-]
-
-
-function affichermanette() {
-let template = document.getElementById("manette_ps5");
-
-for (const p of manettePS5) { // itère sur le tableau
-    let clone = document.importNode(template.content, true); // clone le template
-    
-        newContent = clone.firstElementChild.innerHTML // remplace {{modèle}} // et {{couleur}} par
-            .replace(/{{jdroit}}/g, p.jdroit) // leur valeur
-            .replace(/{{jgauche}}/g, p.jgauche)
-            .replace(/{{fond}}/g, p.fond)
-            .replace(/{{boutons}}/g, p.boutons)
-            .replace(/{{croix}}/g, p.croix)
-            .replace(/{{qtite}}/g, p.qtite)// leur valeur
-
-            clone.firstElementChild.innerHTML = newContent
-
-        document.body.appendChild(clone); // On ajoute le clone créé
-}
-}
 function recupadress() {
     adress = document.getElementById("adresse").value;
     console.log("1")
@@ -49,8 +20,7 @@ function recupadress() {
                     dist = data2.routes[0].distance;
                     calculfdl(dist)
         });
-    });
-    
+    });    
 };
     
 function calculfdl(dist) {
@@ -59,7 +29,9 @@ function calculfdl(dist) {
             fdl = 5 + 0.07*dist/1000
             fdl = Math.round(fdl)
         }
-        document.getElementById("somme_livraison").innerHTML=fdl +"€" ;
+        document.getElementById("somme_livraison").innerHTML=fdl +"€";
+        prixpanier=prixpanier+fdl+prixexpress;
+        document.getElementById("somme_totale").innerHTML=prixpanier +"€";
     }
     
     function calculDateLivraison (){ 
@@ -85,20 +57,23 @@ function calculfdl(dist) {
             }else {
                 totalHeures=(dateControl1_jours-today_jours)*24;
             }
+        prixpaniertemp=prixpanier
         if (totalHeures<73){
             livraisonExpress=true;
             document.getElementById("optionexpress").innerHTML="Oui"
+            prixexpress=8
         }
         if (totalHeures<0){
-                livraisonExpress=false;
-                document.getElementById("optionexpress").innerHTML="Livrason impossible"
+            livraisonExpress=false;
+            document.getElementById("optionexpress").innerHTML="Livrason impossible"
+            prixexpress=0
         }
         if (totalHeures>73){
             livraisonExpress=false;
             document.getElementById("optionexpress").innerHTML="Non"
-        
+            prixexpress=0
         }
-        
+        document.getElementById("somme_totale").innerHTML=prixpanier+prixexpress + "€";
         
         console.log(today) ;
          console.log(dateControl.value) ;
@@ -109,5 +84,86 @@ function calculfdl(dist) {
          document.getElementById("lll").innerHTML=  totalHeures;
         }
         
+function recupobj() {
+    nbps5=parseInt(localStorage.getItem("idps5"));
+    nbxbox=parseInt(localStorage.getItem("idxbox"));
+    nbswitch=parseInt(localStorage.getItem("idswitch"));
+    if (isNaN(nbps5)==false){
+        for (k=0;k<=nbps5;k++){
+            ps5tempstring=localStorage.getItem("panierps5"+k);
+            ps5tempobj=JSON.parse(ps5tempstring);
+            modeleps5="modele :" + ps5tempobj["modele"];
+            fondps5="Fond :" + ps5tempobj["fond"];
+            jdps5="Joystick Droit :" + ps5tempobj["joystickdroit"];
+            jgps5="Joystick Gauche :" + ps5tempobj["joystickgauche"];
+            btnps5="Bouton :" + ps5tempobj["bouton"];
+            crxps5="Croix directionelle :" + ps5tempobj["croixdir"]
+            prixps5="Prix :" + ps5tempobj["prix"]
+            prixps5int=ps5tempobj["prix"]
+            document.getElementById("nom_achat").innerHTML+=modeleps5 + "<br>"
+            + fondps5 + "<br>" + jdps5 + "<br>" + jgps5 + "<br>" + btnps5 + 
+            "<br>" + crxps5 + "<br>" + prixps5 + "<br>" + "\n";
+            prixtot=prixtot+prixps5int;
+        }
+    }
+    if (isNaN(nbps5)==true){nbps5=0;}
+    if (isNaN(nbxbox)==false){
+        for (p=0;p<=nbxbox;p++){
+            xboxtempstring=localStorage.getItem("panierxbox"+p);
+            xboxtempobj=JSON.parse(xboxtempstring);
+            modelexbox="modele :" + xboxtempobj["modele"];
+            fondxbox="Fond :" + xboxtempobj["fond"];
+            jdxbox="Joystick Droit :" + xboxtempobj["joystickdroit"];
+            jgxbox="Joystick Gauche :" + xboxtempobj["joystickgauche"];
+            btnxbox="Bouton :" + xboxtempobj["bouton"];
+            crxxbox="Croix directionelle :" + xboxtempobj["croixdir"]
+            prixxbox="Prix :" + xboxtempobj["prix"]
+            prixxboxint=xboxtempobj["prix"]
+            document.getElementById("nom_achat").innerHTML+=modelexbox + "<br>"
+            + fondxbox + "<br>" + jdxbox + "<br>" + jgxbox + "<br>" + btnxbox + "<br>" 
+            + crxxbox + "<br>" + prixxbox + "<br>";
+            prixtot=prixtot+prixxboxint;
+        }
+    }
+    if (isNaN(nbxbox)==true){nbxbox=0;}
+    if (isNaN(nbswitch)==false){
+        for (i=0;i<=nbswitch;i++){
+            switchtempstring=localStorage.getItem("panierswitch"+i);
+            switchtempobj=JSON.parse(switchtempstring);
+            modeleswitch="modele :" + switchtempobj["modele"];
+            fondswitchd="Fond Droit:" + switchtempobj["fondd"];
+            fondswitchg="Fond Gauche:" + switchtempobj["fondg"];
+            jdswitch="Joystick Droit :" + switchtempobj["joystickdroit"];
+            jgswitch="Joystick Gauche :" + switchtempobj["joystickgauche"];
+            btnswitch="Bouton :" + switchtempobj["bouton"];
+            crxswitch="Croix directionelle :" + switchtempobj["croixdir"]
+            prixswitch="Prix :" + switchtempobj["prix"]
+            prixswitchint=switchtempobj["prix"]
+            document.getElementById("nom_achat").innerHTML+=modeleswitch + "<br>"
+            + fondswitchd + "<br>" + fondswitchg + "<br>" + jdswitch + "<br>" + jgswitch 
+            + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + prixswitch + "<br>";
+            prixtot=prixtot+prixswitchint;
+        }
+    }
+    if (isNaN(nbswitch)==true){nbswitch=0;}
+    if(nbps5+nbswitch+nbxbox==0){
+        document.getElementById("textprix").innerHTML="Prix de la manette :";
+        document.getElementById("somme_prix").innerHTML=prixtot + " €";
+        prixpanier=prixtot;
+        document.getElementById("somme_totale").innerHTML=prixpanier +"€";
+    }
+    if(nbps5+nbswitch+nbxbox>0){
+        document.getElementById("textprix").innerHTML='Prix des manettes :';
+        document.getElementById("somme_prix").innerHTML=prixtot + " €";
+        prixpanier=prixtot;
+        document.getElementById("somme_totale").innerHTML=prixpanier +"€";
+    }
+}
 
-
+function clearcart() {
+    localStorage.clear();
+    document.getElementById("nom_achat").innerHTML="";
+    document.getElementById("somme_prix").innerHTML="0";
+    prixpanier=0;
+    document.getElementById("somme_totale").innerHTML=prixpanier +"€";
+}
