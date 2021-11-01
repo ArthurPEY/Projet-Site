@@ -240,6 +240,7 @@ function addcart (){
     localStorage.setItem("idswitch",idswitch)
     localStorage.setItem("panierswitch"+idswitch,item);
     idswitch=idswitch+1;
+    alert("L'article a été ajouté au panier !")
 }
 
 

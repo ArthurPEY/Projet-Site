@@ -200,6 +200,7 @@ function addcart (){
     localStorage.setItem("idps5",idps5)
     localStorage.setItem("panierps5"+idps5,item);
     idps5=idps5+1;
+    alert("L'article a été ajouté au panier !")
 }
 
 
