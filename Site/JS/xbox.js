@@ -17,7 +17,7 @@ function origin() {
   context.drawImage(imageObj,0,0,canvas.width,canvas.height)
 };
 
-function test() {
+function imagebase() {
     imageObj.src = "images/xbox/xbox.png";
     imageObj.onload = event => {
         context.drawImage(imageObj,0, 0,canvas.width,canvas.height);
@@ -182,14 +182,15 @@ function resetall() {
           imageObj.src="images/xbox/xboxcroix.png";
           imageObj.onload = event => {draw()};};};};
   };
+  
   p1=p2=p3=p4=p5=0
   calculprix()
 }
 
 
-prix=60;
+prix=70;
 function calculprix() {
-    prix=60 + p1 + p2 + p3 + p4 + p5 ;
+    prix=70 + p1 + p2 + p3 + p4 + p5 ;
     document.getElementById("prixxbox").innerHTML = "Prix : " + prix +"€"
 }
 
@@ -199,6 +200,7 @@ function addcart (){
     localStorage.setItem("idxbox",idxbox)
     localStorage.setItem("panierxbox"+idxbox,item);
     idxbox=idxbox+1;
+    alert("L'article a été ajouté au panier !")
 }
 
 
@@ -214,8 +216,4 @@ class manette{
       this.prix = prix;
       this.idxbox = idxbox;
   }
-}
-
-function test() {
-  document.getElementById("test").innerHTML = itemps5
 }

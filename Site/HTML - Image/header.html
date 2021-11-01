@@ -10,6 +10,11 @@
     background-size: cover;
     opacity: 1;
     }
+    
+    a{
+      text-decoration:none; 
+      color: white;
+    }
 
     #nom_marque{
         font-size: 60px;
@@ -74,7 +79,7 @@
           background-color: #1b1b20;
         }
       
-      #ps5btn, #xboxbtn,#switchbtn {
+      #ps5btn, #xboxbtn,#switchbtn,#apropos_contact {
         color: rgb(255, 255, 255);
         display: flex;
         text-shadow: 0px 0px 10px #ffffff;
@@ -83,10 +88,10 @@
       
       
       #ps5btn:hover , #xboxbtn:hover , #switchbtn:hover{
-        background-color: rgb(250, 59, 59);
+        background-color: rgb(59, 148, 250);
         transition: 0.5s;
         font-size: 120%;
-        border: #660d0d;
+        border: rgb(59, 148, 250);
         border-radius: 5px;
         border-width: 100px;
       }
@@ -96,7 +101,7 @@
         color: rgb(255, 255, 255);
       }
       
-      #acc:hover , #pay:hover{
+      #apropos_contact:hover, #pay:hover{
         font-size: 120%;
         transition: 0.5s;
         position:static;
@@ -104,7 +109,7 @@
         
       }
 </style>
-    <h1 id="nom_marque">KUSTOM KONTROLLERS</h1>
+    <h1 id="nom_marque"><a href="/Site/HTML - Image/index.html">KUSTOM KONTROLLERS</a></h1>
     <div class="main">
 
       <div class="logo"> 
@@ -119,6 +124,7 @@
 
       <div class="perso">
         <a id="pay" href="paiement.html">Commander et payer</a>
+        <a id="apropos_contact" href="page_contact.html">Contact</a>
       </div>
 
   </div>

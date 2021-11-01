@@ -1,7 +1,9 @@
 
+
 body{
     background-color: #1b1b20;
     color: white;
+    margin:0
 }
 
 html
@@ -13,6 +15,7 @@ html
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 1;
+    margin:0
 }
 
 

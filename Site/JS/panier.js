@@ -4,6 +4,7 @@ fetch("footer.html").then(contenu => contenu.text()).then(texte => {document.get
 prixtot=0;
 prixpanier=0;
 prixexpress=0;
+fdl=0;
 
 function recupadress() {
     adress = document.getElementById("adresse").value;
@@ -19,19 +20,19 @@ function recupadress() {
                 .then(data2 => {
                     dist = data2.routes[0].distance;
                     calculfdl(dist)
+                    panier() 
         });
-    });    
+    });   
 };
     
 function calculfdl(dist) {
         fdl = 0;
+        prixpanierfldtemp=prixpanier
         if (dist>20000) {
             fdl = 5 + 0.07*dist/1000
             fdl = Math.round(fdl)
         }
         document.getElementById("somme_livraison").innerHTML=fdl +"€";
-        prixpanier=prixpanier+fdl+prixexpress;
-        document.getElementById("somme_totale").innerHTML=prixpanier +"€";
     }
     
     function calculDateLivraison (){ 
@@ -62,26 +63,21 @@ function calculfdl(dist) {
             livraisonExpress=true;
             document.getElementById("optionexpress").innerHTML="Oui"
             prixexpress=8
+            panier();
         }
-        if (totalHeures<0){
+        if (totalHeures<=0){
             livraisonExpress=false;
             document.getElementById("optionexpress").innerHTML="Livrason impossible"
             prixexpress=0
+            panier();
         }
         if (totalHeures>73){
             livraisonExpress=false;
             document.getElementById("optionexpress").innerHTML="Non"
             prixexpress=0
+            panier();
         }
-        document.getElementById("somme_totale").innerHTML=prixpanier+prixexpress + "€";
         
-        console.log(today) ;
-         console.log(dateControl.value) ;
-         document.getElementById("date0").innerHTML=typeof today;
-         document.getElementById("ppp").innerHTML=  today;
-         document.getElementById("fff").innerHTML=  dateControl1_annee;
-         document.getElementById("kkk").innerHTML=  livraisonExpress;
-         document.getElementById("lll").innerHTML=  totalHeures;
         }
         
 function recupobj() {
@@ -102,7 +98,7 @@ function recupobj() {
             prixps5int=ps5tempobj["prix"]
             document.getElementById("nom_achat").innerHTML+=modeleps5 + "<br>"
             + fondps5 + "<br>" + jdps5 + "<br>" + jgps5 + "<br>" + btnps5 + 
-            "<br>" + crxps5 + "<br>" + prixps5 + "<br>" + "\n";
+            "<br>" + crxps5 + "<br>" + prixps5 + "<br>" + "<br>";
             prixtot=prixtot+prixps5int;
         }
     }
@@ -121,7 +117,7 @@ function recupobj() {
             prixxboxint=xboxtempobj["prix"]
             document.getElementById("nom_achat").innerHTML+=modelexbox + "<br>"
             + fondxbox + "<br>" + jdxbox + "<br>" + jgxbox + "<br>" + btnxbox + "<br>" 
-            + crxxbox + "<br>" + prixxbox + "<br>";
+            + crxxbox + "<br>" + prixxbox + "<br>" + "<br>";
             prixtot=prixtot+prixxboxint;
         }
     }
@@ -141,7 +137,7 @@ function recupobj() {
             prixswitchint=switchtempobj["prix"]
             document.getElementById("nom_achat").innerHTML+=modeleswitch + "<br>"
             + fondswitchd + "<br>" + fondswitchg + "<br>" + jdswitch + "<br>" + jgswitch 
-            + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + prixswitch + "<br>";
+            + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + prixswitch + "<br>" + "<br>";
             prixtot=prixtot+prixswitchint;
         }
     }
@@ -166,4 +162,9 @@ function clearcart() {
     document.getElementById("somme_prix").innerHTML="0";
     prixpanier=0;
     document.getElementById("somme_totale").innerHTML=prixpanier +"€";
+}
+
+function panier(){
+    prixpanier=prixtot+prixexpress+fdl
+    document.getElementById("somme_totale").innerHTML=prixpanier + "€";
 }

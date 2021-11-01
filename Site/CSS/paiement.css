@@ -1,3 +1,7 @@
+body{
+    margin:0
+}
+
 .form1{
     order:0
 }
@@ -29,7 +33,6 @@ div {
     font-family: "Nunito", serif;
 }
 h1{
-    text-decoration: underline overline #ffffff;
     color: darkcyan;
     font-family: "Lobster", serif;
 }

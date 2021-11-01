@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="payement_copie.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+
+    <title>Payement</title>
+</head>
+<body>
+  <header id="header"></header>
+  <script src="panier.js"></script>
+  <div class="bloc_payement">
+    <div class="bloc_fils_panier">
+      <h1>Contenu du panier:</h1>
+      <div class="conteneur_achats">       
+        <div class="nom_achat">
+            couleur joystick droit : {{jdroit}} </br>
+            couleur joystick gauche : {{jgauche}}</br>
+            couleur joystick gauche : {{jgauche}}</br>
+            couleur boutons : {{boutons}}</br>
+            couleur croix directionelle : {{croix}}</br>
+            quantité : {{qtite}}</br>
+        </div>  
+        <div class="image_achat">
+          <img src="ps5.png" width="150px">
+        </div>
+      </div>
+    </div>
+
+    <div class="bloc_fils_livraison">
+    <h1>Information de livraison:</h1>
+    <form action="" method="get" class="form">
+        <div class="form1">
+          <label for="name">Nom: </label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form2">
+            <label for="name">Prénom: </label>
+            <input type="text" name="surname" id="surname" required>
+          </div>
+        <div class="form">
+            <label for="name">Rue: </label>
+            <input type="text" name="street" id="street" required>
+          </div>
+          <div class="form">
+            <label for="name">Ville: </label>
+            <input type="text" name="city" id="city" required>
+          </div>
+          <div class="form">
+            <label for="name">Code Postal:</label>
+            <input type="text" name="postal code" id="postal_code" required maxlength="5">
+          </div>
+        <div class="form">
+            <label for="name">Numéro de téléphone:</label>
+            <input type="text" name="phone" id="phone" required maxlength="10">
+        </div>
+        <div class="form">
+          <label for="name">Date de livraison souhaitée:</label>
+          <input type="date" id="start" name="trip-start" value="2021-09-11" min="2021-09-11" max="2022-12-01">
+        </div>
+        <div class="form">
+          <label for="email">Adresse mail: </label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form">
+          <label for="adresse"> Adresse </label>
+          <input id="adresse" onkeyup="recupadress()"></input>
+        </div>
+        <div class="form">
+          <p class="commentaire">Commentaires ou demande de renseignements :</p>
+        <textarea id="story" name="story" rows="5" cols="33"></textarea>
+        </div>
+        <div class="form_bouton">
+          <button type="submit" value="Commander" class="button">Commander
+          <button type="reset" value="Remise à zero" class="button">Remise à zéro
+        </div>
+
+        
+      </form>
+    </div>
+    <div class="bloc_fils_prix">
+      <h1>Récapitulation de la commande :</h1>
+      <div class="boite_recap">
+        <div class="boite_prix">Prix de la manette: <p id="somme_prix">0</p>
+        </div>
+        <div class="boite_livraison">Livraison :<p id="somme_livraison">0</p>
+        </div>
+        <div class="boite_total">Total : <p id="somme_totale">0</p>
+        </div>
+      </div>
+    </div>
+  </div>      
+<footer id="footer"></footer>
+</body>

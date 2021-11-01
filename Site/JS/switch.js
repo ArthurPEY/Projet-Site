@@ -17,7 +17,7 @@ function origin() {
   context.drawImage(imageObj,0,0,canvas.width,canvas.height)
 };
 
-function test() {
+function imagebase() {
     imageObj.src = "images/switch/switch.png";
     imageObj.onload = event => {
         context.drawImage(imageObj,0, 0,canvas.width,canvas.height);
@@ -228,9 +228,9 @@ function resetall() {
 }
 
 
-prix=70;
+prix=90;
 function calculprix() {
-    prix=70 + p1 + p2 + p3 + p4 + p5 ;
+    prix=90 + p1 + p2 + p3 + p4 + p5 ;
     document.getElementById("prixswitch").innerHTML = "Prix : " + prix +"€"
 }
 

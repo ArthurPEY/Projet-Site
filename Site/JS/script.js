@@ -32,88 +32,46 @@ function showSlides(n) {
 }
 
 
-var jd
-function joystickd(jd) {
-  savejd=jd
-  if (jd==1) {
-    document.getElementById("idjoyd").src="images/ps5/joydrouge.png";
-  }
-  if (jd==2) {
-    document.getElementById("idjoyd").src="images/ps5/joydvert.png";
-  }
-  if (jd==3) {
-    document.getElementById("idjoyd").src="images/ps5/joydbleu.png";
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
 }
 
-var jg
-function joystickg(jg) {
-  savejg=jg
-  if (jg==1) {
-    document.getElementById("idjoyg").src="images/ps5/joygrouge.png";
-  }
-  if (jg==2) {
-    document.getElementById("idjoyg").src="images/ps5/joygvert.png";
-  }
-  if (jg==3) {
-    document.getElementById("idjoyg").src="images/ps5/joygbleu.png";
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
   }
 }
 
-var bt
-function btn(bt) {
-  savebt=bt
-  if (bt==1) {
-    document.getElementById("idbtn").src="images/ps5/btnrouge.png";
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
   }
-  if (bt==2) {
-    document.getElementById("idbtn").src="images/ps5/btnvert.png";
-  }
-  if (bt==3) {
-    document.getElementById("idbtn").src="images/ps5/btnbleu.png";
-  }
+  element.className = arr1.join(" ");
 }
 
-var back
-function fond(back) {
-  saveback=back
-  if (back==1) {
-    document.getElementById("idps5f").src="images/ps5/fondrouge.png";
-  }
-  if (back==2) {
-    document.getElementById("idps5f").src="images/ps5/fondvert.png";
-  }
-  if (back==3) {
-    document.getElementById("idps5f").src="images/ps5/fondbleu.png";
-  }
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
 }
-
-var crx
-function croix(crx) {
-  savecroix=crx
-  if (crx=="rouge") {
-    document.getElementById("idcroix").src="images/ps5/croixrouge.png";
-  }
-  if (crx=="vert") {
-    document.getElementById("idcroix").src="images/ps5/croixvert.png";
-  }
-  if (crx==String("bleu")) {
-    document.getElementById("idcroix").src="images/ps5/croixbleu.png";
-    a=String(bleu)
-  }
-}
-
-
-class manette{
-
-  constructor(modele,fond,joystickdroit,joystickgauche,bouton,croixdir,id,prix){
-      this.modele = modele;
-      this.fond = fond;
-      this.joystickdroit = joystickdroit;
-      this.joystickgauche = joystickgauche;
-      this.bouton = bouton;
-      this.croixdir = croixdir;
-      this.prix = prix;
-      this.id = id;
-  }
-}
+//fin du code filtre
