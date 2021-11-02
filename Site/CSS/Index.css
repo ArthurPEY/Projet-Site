@@ -8,6 +8,7 @@ html
     background-size: cover;
     opacity: 1;
 }
+
 .titre_exemples{
   font-size: 30px;
   font-family:"Stick No Bills";
@@ -25,14 +26,20 @@ html
   text-align: center;
 }
 
+.wrapper {
+  display: grid;
+}
+.top,.midtop,.mid,.midbot,.bot {
+  grid-column: 1;
+}
 
 /* filtres*/
 /* mdif 26/10*/
 #myBtnContainer{
   justify-content: center;
   display: flex;
-
 }
+
 .filterDiv {
   float: left;
   background-color: #1b1b20;
@@ -91,7 +98,7 @@ html
   
 }
 /* mdif 26/10*/
-<style>
+
 * {box-sizing: border-box}
 body {
   font-family: Verdana, sans-serif;
@@ -145,7 +152,7 @@ body {
   position: absolute;
   top: 0;
 }
-  /* The dots/bullets/indicators */
+  /* indicateur points */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -159,7 +166,7 @@ body {
 .active, .dot:hover {
   background-color: #111111;
 }
-  /* Fading animation */
+  /*animation */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -174,15 +181,6 @@ body {
   from {opacity: .4} 
   to {opacity: 1}
 }
-  /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-.prev, .next,.text {font-size: 11px}
-  }
-
-
-
-
-
 
 .contenedor-imagenes {
   display: flex;
@@ -192,12 +190,14 @@ body {
 }
 
 
-}
 
 .contenedor-imagenes img:first-child {
   margin-right: 10px;
 }
+
+
 /* a partir de la c'est le code pour la page de contact*/
+
 .conteiner_principal {
   display: flex;
   flex-direction: column;
