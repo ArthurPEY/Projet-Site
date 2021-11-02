@@ -110,18 +110,24 @@ function recupobj() {
 
             prixps5="Prix :" + prixps5int
             iddiv="divps5"+k;
-            document.getElementById("nom_achat").innerHTML+="<div id=iddiv>" + modeleps5 + "<br>"
-            + fondps5 + "<br>" + jdps5 + "<br>" + jgps5 + "<br>" + btnps5 + 
-            "<br>" + crxps5 + "<br>" + quantiteps5 + "<br>" + prixps5 + "<br>" + "<br>"  + "</div>";
+
+            document.getElementById("nom_achat").innerHTML+="<p id=iddiv style=white-space:nowrap;>" + modeleps5 + 
+            `<img style='float:right;height:25vh;margin-left:130px' src='' id=tableBannerps5${k} />` +  "<br>"
+            + fondps5 + "<br>" + jdps5  + "<br>" + jgps5  + "<br>" + btnps5 + 
+            "<br>" + crxps5 + "<br>" + quantiteps5 + "<br>" + prixps5 + "<br>" + "<br>"  + "</p>" ;
             document.getElementById("iddiv").id=iddiv;
             prixtot=prixtot+prixps5int;
+            dataImage = localStorage.getItem(`imgDataps5${k}`);
+            bannerImg = document.getElementById(`tableBannerps5${k}`);
+            bannerImg.src = "data:image/png;base64," + dataImage;
+
         }
         
     }
     if (isNaN(nbps5)==true){nbps5=0;}
     if (isNaN(nbxbox)==false){
-        for (k=0;k<=nbxbox;k++){
-            xboxtempstring=localStorage.getItem("panierxbox"+k);
+        for (p=0;p<=nbxbox;p++){
+            xboxtempstring=localStorage.getItem("panierxbox"+p);
             xboxtempobj=JSON.parse(xboxtempstring);
             modelexbox="Modèle :" + xboxtempobj["modele"];
             fondxbox="Fond :" + xboxtempobj["fond"];
@@ -142,10 +148,16 @@ function recupobj() {
             }
     
             prixxbox="Prix :" + prixxboxint
+            iddiv="divxbox"+p;
     
-            document.getElementById("nom_achat").innerHTML+=modelexbox + "<br>"
+            document.getElementById("nom_achat").innerHTML+="<p id=iddiv style=white-space:nowrap;>" + modelexbox + 
+            `<img style='float:right;height:25vh;margin-left:130px' src='' id=tableBannerxbox${p} />` + "<br>"
             + fondxbox + "<br>" + jdxbox + "<br>" + jgxbox + "<br>" + btnxbox + 
             "<br>" + crxxbox + "<br>" + quantitexbox + "<br>" + prixxbox + "<br>" + "<br>" + "<br>";
+            document.getElementById("iddiv").id=iddiv;
+            dataImage = localStorage.getItem(`imgDataxbox${p}`);
+            bannerImg = document.getElementById(`tableBannerxbox${p}`);
+            bannerImg.src = "data:image/png;base64," + dataImage;
             prixtot=prixtot+prixxboxint;
         }
         
@@ -175,10 +187,16 @@ function recupobj() {
             }
 
             prixswitch="Prix :" + prixswitchint
+            iddiv="divswitch"+i;
 
-            document.getElementById("nom_achat").innerHTML+=modeleswitch + "<br>"
+            document.getElementById("nom_achat").innerHTML+="<p id=iddiv style=white-space:nowrap;>" + modeleswitch + 
+            `<img style='float:right;height:25vh;margin-left:90px' src='' id=tableBannerswitch${i} />` + "<br>"
             + fondswitchd + "<br>" + fondswitchg + "<br>" + jdswitch + "<br>" + jgswitch 
             + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + quantiteswitch + "<br>" + prixswitch + "<br>" + "<br>";
+            document.getElementById("iddiv").id=iddiv;
+            dataImage = localStorage.getItem(`imgDataswitch${i}`);
+            bannerImg = document.getElementById(`tableBannerswitch${i}`);
+            bannerImg.src = "data:image/png;base64," + dataImage;
             prixtot=prixtot+prixswitchint;
         }
     }

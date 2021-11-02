@@ -14,11 +14,25 @@ $('#some_selectorps5').html(select);
 $('#some_selectorxbox').html(select);
 $('#some_selectorswitch').html(select);
 
+function getBase64Image(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
 if (produit_id=="1"){
   document.title="Manette PS5"
   document.getElementById("1").style.display="block"
   item=[]
+
+
   if (localStorage.getItem("idps5")==null){
     idps5=0;
   }
@@ -221,8 +235,11 @@ if (produit_id=="1"){
       item=JSON.stringify(itemps5);
       localStorage.setItem("idps5",idps5)
       localStorage.setItem("panierps5"+idps5,item);
-      idps5=idps5+1;
       alert("L'article a été ajouté au panier !")
+      bannerImage = document.getElementById('imageps5');
+      imgData = getBase64Image(bannerImage);
+      localStorage.setItem("imgDataps5"+idps5, imgData);
+      idps5=idps5+1;
   }
 
 
@@ -449,6 +466,9 @@ else if (produit_id=="2"){
     item=JSON.stringify(itemxbox);
     localStorage.setItem("idxbox",idxbox)
     localStorage.setItem("panierxbox"+idxbox,item);
+    bannerImage = document.getElementById('imagexbox');
+    imgData = getBase64Image(bannerImage);
+    localStorage.setItem("imgDataxbox"+idxbox, imgData);
     idxbox=idxbox+1;
     alert("L'article a été ajouté au panier !")
   }
@@ -718,6 +738,9 @@ else if (produit_id=="3"){
     item=JSON.stringify(itemswitch);
     localStorage.setItem("idswitch",idswitch)
     localStorage.setItem("panierswitch"+idswitch,item);
+    bannerImage = document.getElementById('imageswitch');
+    imgData = getBase64Image(bannerImage);
+    localStorage.setItem("imgDataswitch"+idswitch, imgData);
     idswitch=idswitch+1;
     alert("L'article a été ajouté au panier !")
   }
