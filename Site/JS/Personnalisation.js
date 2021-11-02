@@ -10,7 +10,9 @@ var select = '';
 for (i=1;i<=100;i++){
     select += '<option val=' + i + '>' + i + '</option>';
 }
-$('#some_selector').html(select);
+$('#some_selectorps5').html(select);
+$('#some_selectorxbox').html(select);
+$('#some_selectorswitch').html(select);
 
 
 if (produit_id=="1"){
@@ -214,7 +216,7 @@ if (produit_id=="1"){
   }
 
   function addcart (){
-      quantite=parseInt(document.getElementById("some_selector").value)
+      quantite=parseInt(document.getElementById("some_selectorps5").value)
       itemps5=new manette("PS5",saveback,savejd,savejg,savebt,savecroix,idps5,quantite,prix);
       item=JSON.stringify(itemps5);
       localStorage.setItem("idps5",idps5)
@@ -442,7 +444,8 @@ else if (produit_id=="2"){
   }
   
   function addcart (){
-    itemxbox=new manette("XBOX",saveback,savejd,savejg,savebt,savecroix,idxbox,prix);
+    quantite=parseInt(document.getElementById("some_selectorxbox").value);
+    itemxbox=new manette("XBOX",saveback,savejd,savejg,savebt,savecroix,quantite,idxbox,prix);
     item=JSON.stringify(itemxbox);
     localStorage.setItem("idxbox",idxbox)
     localStorage.setItem("panierxbox"+idxbox,item);
@@ -453,7 +456,7 @@ else if (produit_id=="2"){
   
   class manette{
   
-  constructor(modele,fond,joystickdroit,joystickgauche,bouton,croixdir,idxbox,prix){
+  constructor(modele,fond,joystickdroit,joystickgauche,bouton,croixdir,quantite,idxbox,prix){
       this.modele = modele;
       this.fond = fond;
       this.joystickdroit = joystickdroit;
@@ -462,6 +465,7 @@ else if (produit_id=="2"){
       this.croixdir = croixdir;
       this.prix = prix;
       this.idxbox = idxbox;
+      this.quantite = quantite;
   }
   }
   
@@ -704,12 +708,13 @@ else if (produit_id=="3"){
   
   prix=90;
   function calculprix() {
-    prix=90 + p1 + p2 + p3 + p4 + p5 ;
+    prix=90 + p1 + p2 + p3 + p4 + p5 + p6;
     document.getElementById("prixswitch").innerHTML = "Prix : " + prix +"€"
   }
   
   function addcart (){
-    itemswitch=new manette("SWITCH",savebackg,savebackd,savejd,savejg,savebt,savecroix,idswitch,prix);
+    quantite=parseInt(document.getElementById("some_selectorswitch").value);
+    itemswitch=new manette("SWITCH",savebackg,savebackd,savejd,savejg,savebt,savecroix,idswitch,quantite,prix);
     item=JSON.stringify(itemswitch);
     localStorage.setItem("idswitch",idswitch)
     localStorage.setItem("panierswitch"+idswitch,item);
@@ -720,7 +725,7 @@ else if (produit_id=="3"){
   
   class manette{
   
-  constructor(modele,fondd,fondg,joystickdroit,joystickgauche,bouton,croixdir,idswitch,prix){
+  constructor(modele,fondd,fondg,joystickdroit,joystickgauche,bouton,croixdir,idswitch,quantite,prix){
       this.modele = modele;
       this.fondd = fondd;
       this.fondg = fondg;
@@ -730,6 +735,7 @@ else if (produit_id=="3"){
       this.croixdir = croixdir;
       this.prix = prix;
       this.idswitch = idswitch;
+      this.quantite = quantite;
   }
   }
   

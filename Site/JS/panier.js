@@ -80,9 +80,6 @@ function calculfdl(dist) {
         
         }
 
-function remitem() {
-    localStorage.removeItem("'panierps5'+k")
-}
 
 function recupobj() {
     nbps5=parseInt(localStorage.getItem("idps5"));
@@ -90,6 +87,7 @@ function recupobj() {
     nbswitch=parseInt(localStorage.getItem("idswitch"));
     if (isNaN(nbps5)==false){
         for (k=0;k<=nbps5;k++){
+            nomobj="panierps5"+k;
             ps5tempstring=localStorage.getItem("panierps5"+k);
             ps5tempobj=JSON.parse(ps5tempstring);
             modeleps5="modele :" + ps5tempobj["modele"];
@@ -111,10 +109,11 @@ function recupobj() {
             }
 
             prixps5="Prix :" + prixps5int
-
-            document.getElementById("nom_achat").innerHTML+=modeleps5 + "<br>"
+            iddiv="divps5"+k;
+            document.getElementById("nom_achat").innerHTML+="<div id=iddiv>" + modeleps5 + "<br>"
             + fondps5 + "<br>" + jdps5 + "<br>" + jgps5 + "<br>" + btnps5 + 
-            "<br>" + crxps5 + "<br>" + quantiteps5 + "<br>" + prixps5 + "<br>" + "<button onclick=remitem();recupobj()>Supprimer du panier</button>" + "<br>" + "<br>";
+            "<br>" + crxps5 + "<br>" + quantiteps5 + "<br>" + prixps5 + "<br>" + "<br>"  + "</div>";
+            document.getElementById("iddiv").id=iddiv;
             prixtot=prixtot+prixps5int;
         }
         
@@ -146,7 +145,7 @@ function recupobj() {
     
             document.getElementById("nom_achat").innerHTML+=modelexbox + "<br>"
             + fondxbox + "<br>" + jdxbox + "<br>" + jgxbox + "<br>" + btnxbox + 
-            "<br>" + crxxbox + "<br>" + quantitexbox + "<br>" + prixxbox + "<br>" + "<button onclick=remitem();recupobj()>Supprimer du panier</button>" + "<br>" + "<br>";
+            "<br>" + crxxbox + "<br>" + quantitexbox + "<br>" + prixxbox + "<br>" + "<br>" + "<br>";
             prixtot=prixtot+prixxboxint;
         }
         
@@ -165,8 +164,7 @@ function recupobj() {
             crxswitch="Croix directionelle :" + switchtempobj["croixdir"]
             prixswitch="Prix :" + switchtempobj["prix"]
             prixswitchint=switchtempobj["prix"]
-
-            prixswitchint=switchtempobj["prix"]
+            quantiteswitch="quantite :" + switchtempobj["quantite"]
     
             if (switchtempobj["quantite"]>1==true) {
                 prixswitchint=switchtempobj["prix"]*switchtempobj["quantite"];
@@ -180,7 +178,7 @@ function recupobj() {
 
             document.getElementById("nom_achat").innerHTML+=modeleswitch + "<br>"
             + fondswitchd + "<br>" + fondswitchg + "<br>" + jdswitch + "<br>" + jgswitch 
-            + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + prixswitch + "<br>" + "<br>";
+            + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + quantiteswitch + "<br>" + prixswitch + "<br>" + "<br>";
             prixtot=prixtot+prixswitchint;
         }
     }
