@@ -98,31 +98,19 @@ function recupobj() {
             jgps5="Joystick Gauche :" + ps5tempobj["joystickgauche"];
             btnps5="Bouton :" + ps5tempobj["bouton"];
             crxps5="Croix directionelle :" + ps5tempobj["croixdir"]
-            quantiteps5="quantite :" + ps5tempobj["quantite"]
-
+            prixps5="Prix :" + ps5tempobj["prix"]
             prixps5int=ps5tempobj["prix"]
-
-            if (ps5tempobj["quantite"]>1==true) {
-                prixps5int=ps5tempobj["prix"]*ps5tempobj["quantite"];
-            }
-
-            if (ps5tempobj["quantite"]>10==true) {
-                prixps5int=ps5tempobj["prix"]*ps5tempobj["quantite"]*0.9;
-            }
-
-            prixps5="Prix :" + prixps5int
-
             document.getElementById("nom_achat").innerHTML+=modeleps5 + "<br>"
             + fondps5 + "<br>" + jdps5 + "<br>" + jgps5 + "<br>" + btnps5 + 
-            "<br>" + crxps5 + "<br>" + quantiteps5 + "<br>" + prixps5 + "<br>" + "<button onclick=remitem();recupobj()>Supprimer du panier</button>" + "<br>" + "<br>";
+            "<br>" + crxps5 + "<br>" + prixps5 + "<br>" + "<button onclick=remitem();recupobj()>Supprimer du panier</button>" + "<br>" + "<br>";
             prixtot=prixtot+prixps5int;
         }
         
     }
     if (isNaN(nbps5)==true){nbps5=0;}
     if (isNaN(nbxbox)==false){
-        for (k=0;k<=nbxbox;k++){
-            xboxtempstring=localStorage.getItem("panierxbox"+k);
+        for (p=0;p<=nbxbox;p++){
+            xboxtempstring=localStorage.getItem("panierxbox"+p);
             xboxtempobj=JSON.parse(xboxtempstring);
             modelexbox="modele :" + xboxtempobj["modele"];
             fondxbox="Fond :" + xboxtempobj["fond"];
@@ -130,26 +118,13 @@ function recupobj() {
             jgxbox="Joystick Gauche :" + xboxtempobj["joystickgauche"];
             btnxbox="Bouton :" + xboxtempobj["bouton"];
             crxxbox="Croix directionelle :" + xboxtempobj["croixdir"]
-            quantitexbox="quantite :" + xboxtempobj["quantite"]
-    
+            prixxbox="Prix :" + xboxtempobj["prix"]
             prixxboxint=xboxtempobj["prix"]
-    
-            if (xboxtempobj["quantite"]>1==true) {
-                prixxboxint=xboxtempobj["prix"]*xboxtempobj["quantite"];
-            }
-    
-            if (xboxtempobj["quantite"]>10==true) {
-                prixxboxint=xboxtempobj["prix"]*xboxtempobj["quantite"]*0.9;
-            }
-    
-            prixxbox="Prix :" + prixxboxint
-    
             document.getElementById("nom_achat").innerHTML+=modelexbox + "<br>"
-            + fondxbox + "<br>" + jdxbox + "<br>" + jgxbox + "<br>" + btnxbox + 
-            "<br>" + crxxbox + "<br>" + quantitexbox + "<br>" + prixxbox + "<br>" + "<button onclick=remitem();recupobj()>Supprimer du panier</button>" + "<br>" + "<br>";
+            + fondxbox + "<br>" + jdxbox + "<br>" + jgxbox + "<br>" + btnxbox + "<br>" 
+            + crxxbox + "<br>" + prixxbox + "<br>" + "<br>";
             prixtot=prixtot+prixxboxint;
         }
-        
     }
     if (isNaN(nbxbox)==true){nbxbox=0;}
     if (isNaN(nbswitch)==false){
@@ -165,19 +140,6 @@ function recupobj() {
             crxswitch="Croix directionelle :" + switchtempobj["croixdir"]
             prixswitch="Prix :" + switchtempobj["prix"]
             prixswitchint=switchtempobj["prix"]
-
-            prixswitchint=switchtempobj["prix"]
-    
-            if (switchtempobj["quantite"]>1==true) {
-                prixswitchint=switchtempobj["prix"]*switchtempobj["quantite"];
-            }
-
-            if (switchtempobj["quantite"]>10==true) {
-                prixswitchint=switchtempobj["prix"]*switchtempobj["quantite"]*0.9;
-            }
-
-            prixswitch="Prix :" + prixswitchint
-
             document.getElementById("nom_achat").innerHTML+=modeleswitch + "<br>"
             + fondswitchd + "<br>" + fondswitchg + "<br>" + jdswitch + "<br>" + jgswitch 
             + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + prixswitch + "<br>" + "<br>";
