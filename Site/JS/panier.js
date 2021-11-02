@@ -90,13 +90,13 @@ function recupobj() {
             nomobj="panierps5"+k;
             ps5tempstring=localStorage.getItem("panierps5"+k);
             ps5tempobj=JSON.parse(ps5tempstring);
-            modeleps5="modele :" + ps5tempobj["modele"];
+            modeleps5="Modèle :" + ps5tempobj["modele"];
             fondps5="Fond :" + ps5tempobj["fond"];
             jdps5="Joystick Droit :" + ps5tempobj["joystickdroit"];
             jgps5="Joystick Gauche :" + ps5tempobj["joystickgauche"];
             btnps5="Bouton :" + ps5tempobj["bouton"];
             crxps5="Croix directionelle :" + ps5tempobj["croixdir"]
-            quantiteps5="quantite :" + ps5tempobj["quantite"]
+            quantiteps5="Quantité :" + ps5tempobj["quantite"]
 
             prixps5int=ps5tempobj["prix"]
 
@@ -123,13 +123,13 @@ function recupobj() {
         for (k=0;k<=nbxbox;k++){
             xboxtempstring=localStorage.getItem("panierxbox"+k);
             xboxtempobj=JSON.parse(xboxtempstring);
-            modelexbox="modele :" + xboxtempobj["modele"];
+            modelexbox="Modèle :" + xboxtempobj["modele"];
             fondxbox="Fond :" + xboxtempobj["fond"];
             jdxbox="Joystick Droit :" + xboxtempobj["joystickdroit"];
             jgxbox="Joystick Gauche :" + xboxtempobj["joystickgauche"];
             btnxbox="Bouton :" + xboxtempobj["bouton"];
             crxxbox="Croix directionelle :" + xboxtempobj["croixdir"]
-            quantitexbox="quantite :" + xboxtempobj["quantite"]
+            quantitexbox="Quantité :" + xboxtempobj["quantite"]
     
             prixxboxint=xboxtempobj["prix"]
     
@@ -155,7 +155,7 @@ function recupobj() {
         for (i=0;i<=nbswitch;i++){
             switchtempstring=localStorage.getItem("panierswitch"+i);
             switchtempobj=JSON.parse(switchtempstring);
-            modeleswitch="modele :" + switchtempobj["modele"];
+            modeleswitch="Modèle :" + switchtempobj["modele"];
             fondswitchd="Fond Droit:" + switchtempobj["fondd"];
             fondswitchg="Fond Gauche:" + switchtempobj["fondg"];
             jdswitch="Joystick Droit :" + switchtempobj["joystickdroit"];
@@ -164,7 +164,7 @@ function recupobj() {
             crxswitch="Croix directionelle :" + switchtempobj["croixdir"]
             prixswitch="Prix :" + switchtempobj["prix"]
             prixswitchint=switchtempobj["prix"]
-            quantiteswitch="quantite :" + switchtempobj["quantite"]
+            quantiteswitch="Quantité :" + switchtempobj["quantite"]
     
             if (switchtempobj["quantite"]>1==true) {
                 prixswitchint=switchtempobj["prix"]*switchtempobj["quantite"];
