@@ -112,7 +112,7 @@ function recupobj() {
             iddiv="divps5"+k;
 
             document.getElementById("nom_achat").innerHTML+="<p id=iddiv style=white-space:nowrap;>" + modeleps5 + 
-            `<img style='float:right;height:25vh;margin-left:130px' src='' id=tableBannerps5${k} />` +  "<br>"
+            `<img style='float:right;height:180px;margin-left:130px' src='' id=tableBannerps5${k} />` +  "<br>"
             + fondps5 + "<br>" + jdps5  + "<br>" + jgps5  + "<br>" + btnps5 + 
             "<br>" + crxps5 + "<br>" + quantiteps5 + "<br>" + prixps5 + "<br>" + "<br>"  + "</p>" ;
             document.getElementById("iddiv").id=iddiv;
@@ -151,7 +151,7 @@ function recupobj() {
             iddiv="divxbox"+p;
     
             document.getElementById("nom_achat").innerHTML+="<p id=iddiv style=white-space:nowrap;>" + modelexbox + 
-            `<img style='float:right;height:25vh;margin-left:130px' src='' id=tableBannerxbox${p} />` + "<br>"
+            `<img style='float:right;height:180px;margin-left:130px' src='' id=tableBannerxbox${p} />` + "<br>"
             + fondxbox + "<br>" + jdxbox + "<br>" + jgxbox + "<br>" + btnxbox + 
             "<br>" + crxxbox + "<br>" + quantitexbox + "<br>" + prixxbox + "<br>" + "<br>" + "<br>";
             document.getElementById("iddiv").id=iddiv;
@@ -190,7 +190,7 @@ function recupobj() {
             iddiv="divswitch"+i;
 
             document.getElementById("nom_achat").innerHTML+="<p id=iddiv style=white-space:nowrap;>" + modeleswitch + 
-            `<img style='float:right;height:25vh;margin-left:90px' src='' id=tableBannerswitch${i} />` + "<br>"
+            `<img style='float:right;height:200px;margin-left:90px' src='' id=tableBannerswitch${i} />` + "<br>"
             + fondswitchd + "<br>" + fondswitchg + "<br>" + jdswitch + "<br>" + jgswitch 
             + "<br>" + btnswitch + "<br>" + crxswitch + "<br>" + quantiteswitch + "<br>" + prixswitch + "<br>" + "<br>";
             document.getElementById("iddiv").id=iddiv;

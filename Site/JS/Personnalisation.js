@@ -54,7 +54,7 @@ if (produit_id=="1"){
   };
 
   function imagebase() {
-      imageObj.src = "/Site/images/ps5/ps5.png";
+      imageObj.src = "images/ps5/ps5.png";
       imageObj.onload = event => {
           context.drawImage(imageObj,0, 0,canvas.width,canvas.height);
       };
@@ -770,7 +770,7 @@ else if (produit_id=="3"){
 else{
   document.title="Perdu"
   document.getElementById("1").style.display="block"
-  document.getElementById("1").innerHTML="<br> Ta rien à faire ici !"
+  document.getElementById("1").innerHTML="<br> Ta rien à faire ici ! <br><br> <a href=index.html style='font-style: oblique;'>Retour à la page d'accueil</a>"
 }
 
 
